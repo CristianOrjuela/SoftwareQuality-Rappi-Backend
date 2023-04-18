@@ -1,0 +1,24 @@
+{
+  "name": "rappi-backend",
+  "version": "1.0.0",
+  "description": "The software component to create multiple services in the bussiness layer for the rappi application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "services",
+    "rappi",
+    "users",
+    "requests"
+  ],
+  "author": "UniversidadAntonioNariño",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.2.1",
+    "sequelize": "^6.31.0"
+  }
+}
