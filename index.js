@@ -13,6 +13,9 @@ app.set('port', process.env.PORT || 4000);
 // Middleware
 app.use(express.json());
 
+// Redirection
+app.use('/api/v1/', require('./routes/index'));
+
 try {
     const db_status = db_connection.authenticate();
     console.log("Connection has been established successfully");
