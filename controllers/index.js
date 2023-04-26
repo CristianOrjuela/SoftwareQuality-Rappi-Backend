@@ -7,11 +7,13 @@ const { addNewUserService } = require('../services/index');
 // Controllers
 const addNewUser = async (request, response) => {
 
-    try {
-        const newDataFromService = addNewUserService();
-        response.status(201).json({data: newDataFromService()});
-    } catch (error) {
-        response.json( 'Error usuario: ' + error );
+    // Result from the service query
+    const serviceResult = await addNewUserService();
+
+    if(serviceResult){
+        response.status(200).json({data: serviceResult}); 
+    }else{
+        response.status(500).json({data: 'error'}); 
     }
 
 };

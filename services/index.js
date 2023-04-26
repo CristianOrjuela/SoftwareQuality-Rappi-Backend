@@ -1,29 +1,17 @@
 // Requires
 const express = require('express');
+const { Customer } = require('./models/customer');
 
 // Services
-const addNewUserService = ( ) => {
+const addNewUserService = async () => {
 
-    // Dummy data
-    const getSomeDataFromDataBase = [
-        {
-            id: 1,
-            name: "User 1",
-            credits: "10000"
-        },
-        {
-            id: 2,
-            name: "User 2",
-            credits: "20000"
-        },
-        {
-            id: 3,
-            name: "User 3",
-            credits: "30000"
-        }
-    ];
-
-    return getSomeDataFromDataBase;
+    try {
+        const customerList = await Customer.findAll();     
+        return customerList;
+    } catch (e) {
+        throw error;
+    }
+    
 
 };
 
