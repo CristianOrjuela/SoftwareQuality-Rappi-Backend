@@ -2,16 +2,55 @@
 const express = require('express');
 
 // Imports
-const { addNewUserService } = require('../services/index');
+const { createUserService } = require('../services/index');
 
 // Controllers
-const addNewUser = async (request, response) => {
+const createUser = async (request, response) => {
 
     // Result from the service query
-    const serviceResult = await addNewUserService();
+    const serviceResult = await createUserService();
 
     if(serviceResult){
-        response.status(200).json({data: serviceResult}); 
+        response.status(200).json({data: 'Created user'}); 
+    }else{
+        response.status(500).json({data: 'error'}); 
+    }
+
+};
+
+const deleteUser = async (request, response) => {
+
+    // Result from the service query
+    const serviceResult = await createUserService();
+
+    if(serviceResult){
+        response.status(200).json({data: 'Deleted user'}); 
+    }else{
+        response.status(500).json({data: 'error'}); 
+    }
+
+};
+
+const updateUser = async (request, response) => {
+
+    // Result from the service query
+    const serviceResult = await createUserService();
+
+    if(serviceResult){
+        response.status(200).json({data: 'Updated user'}); 
+    }else{
+        response.status(500).json({data: 'error'}); 
+    }
+
+};
+
+const listUser = async (request, response) => {
+
+    // Result from the service query
+    const serviceResult = await createUserService();
+
+    if(serviceResult){
+        response.status(200).json({data: 'Listed user'}); 
     }else{
         response.status(500).json({data: 'error'}); 
     }
@@ -20,5 +59,5 @@ const addNewUser = async (request, response) => {
 
 // Exporting the controllers
 module.exports = {
-    addNewUser
+    createUser, deleteUser, updateUser, listUser
 }
